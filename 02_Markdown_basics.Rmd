@@ -1,0 +1,69 @@
+---
+title: "R Markdown Basics"
+output: html_notebook
+---
+<br/>
+
+# Organization with Headers  
+^ This is an R Markdown header, denoted with leading hash mark(s). Note it is not a comment, like in R code.  
+
+The number of hash marks indicates the type and size of header: 
+
+<br/>  
+
+# Header 1 - so huge
+
+## Header 2  
+
+### Header 3  
+
+#### Header 4  
+
+##### Header 5  
+
+###### Header 6  
+ 
+### Break Lines
+
+<br/>
+
+
+
+
+
+
+
+
+Added extra Break line
+
+
+### Text Formatting
+**BOLD**  
+*ITALICS*
+
+### Lists
+#### Ordered Lists
+1. Sit back
+2. Relax
+  A. Take a deep breath
+  B. R is fun!
+    i. This list is deep
+    ii. Aaaand, we're done
+
+#### Bulleted Lists
+* Game of Thrones
+    + John Snow
+    + Daenerys Targaryen
+    + Aria Stark
+* Harry Potter
+    + Hermione Granger
+    + Sirius Black
+    + Dobby
+
+
+### Links
+[R Markdown](http://rmarkdown.rstudio.com) - text in brackets, followed by web address in parentheses.
+
+### Embedding Images
+Check out this pretty Tasseled Cap brightness, greenness, wetness composite:
+![](/Users/tinacormier/Desktop/TCAP.png)

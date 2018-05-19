@@ -1,0 +1,38 @@
+---
+title: "Introduction to YAML Headers"
+author: Tina Cormier
+date: May 15, 2018
+output: 
+  html_notebook:
+    toc: true
+    number_sections: true
+    toc_float:
+      collapsed: false
+    highlight: zenburn
+    code_folding: hide
+---
+
+
+# YAML Headers and Options
+At the top of every notebook/rmarkdown file is a "YAML Header," enclosed with '---'.  
+
+Fun fact: A YAML (Originally "Yet Another Markup Language." Now YAML Ain't Markup Language) header provides instuctions about what type of document to build. It is a set of key: value pairs at the beginning of the file, denoted by three dashes to start and end the header section.
+
+
+## Plots  
+```{r}
+plot(cars)
+```
+
+## Some more text  
+Let's look at the iris data set.
+
+## A big table - benefits of paged data frame YAML Option
+```{r}
+iris
+```
+
+### A bit more text  
+Nothing left to say!
+
+

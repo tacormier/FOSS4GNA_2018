@@ -1,0 +1,31 @@
+---
+title: "Anatomy of an R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you open a new R notebook in RStudio, it opens with a handy template to get you started (thanks RStudio friends)! When you execute code within the notebook, the results appear beneath the code. 
+
+The source code (this .rmd file) is just a text file. When you save the .rmd, an accompanying html file is also generated in the same directory. The html also has the source code in it. To access the source code from the html file, open the html file in a browser, click on the 'code' button at the top right corner of the document, and select 'download rmd.' Super handy for sharing a finished report AND your source code for the notebook in a single document!
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*.  
+
+```{r}
+plot(cars)
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+```{r}
+
+```
+
+```{python}
+
+```
+
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+

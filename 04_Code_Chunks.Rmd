@@ -1,0 +1,85 @@
+---
+title: 'Rmd Code Chunks'
+author: Tina Cormier
+date: May 15, 2018
+output: 
+  html_notebook:
+    toc: true
+    toc_float:
+      collapsed: false
+    highlight: zenburn
+---
+
+## R Code Chunks 
+Embed code chunks into your report. Code chunks are enclosed within three backwards apostrophes <span style="color:red">```</span> 
+
+Example:
+```{r}
+print('hello world')
+```
+
+### Code Chunk Options
+<br/>
+
+#### message = FALSE; warning = FALSE  
+Hiding code output
+Sometimes we want to run some code, but we don't necessarily want to see the output. For example, when loading libraries, we don't always care about the output messages, as they can clutter up our document.  
+
+Example:
+```{r}
+library(data.table)
+```
+
+Yikes! We don't want to see all of that output. So let's restart R and clear all of our output before running the line below:
+```{r message = FALSE, warning = FALSE}
+library(data.table)
+```
+<br/>
+
+#### include = FALSE
+Hiding the code in addition to the output 
+Example use case - setting options.  
+Rmarkdown still runs the code in the chunk, and the results can be used in other chunks, but neither the output nor the code are seen in the rendered file.
+
+```{r include = FALSE}
+library(raster)
+rasterOptions(tmpdir="/mnt/storage/tmp/")
+
+```
+<br/>
+
+#### echo = FALSE  
+Prevent the code, but not the results, from rendering in output file. Good for embedding figures.
+```{r echo = F}
+library(ggplot2)
+ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species)) + geom_point() + geom_smooth()
+```
+
+<br/> 
+Let's try again with specific figure dimensions!
+```{r echo = F, fig.width=5, fig.height=2}
+library(ggplot2)
+ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species)) + geom_point() + geom_smooth()
+```
+
+### In-line Code 
+This is unique to r notebooks (as far as I know at this time - caveats!). Surround code with single backticks and R will interpret it as code within your text. 
+
+For example, all of life's lessons can be learned from the sum of two important numbers, 3.14 plus 42 equals `r 3.14 + 42`.
+
+### Other Languages Welcome Here
+R notebooks have support for python, bash, Rcpp, SQL and stan code chunks.
+
+There are some limitations with using other languages in r notebooks. Namely, any variables created in a chunk generally exist only within that chunk and cannot be called subsequently and are not available in the global environment. 
+
+For example, OCD terrorism - list all items on my desktop using bash:
+```{bash}
+ls /Users/tinacormier/Desktop
+```
+
+Or:
+```{python}
+noprimes = [j for i in range(2, 8) for j in range(i*2, 50, i)]
+primes = [x for x in range(2, 50) if x not in noprimes]
+print primes
+```

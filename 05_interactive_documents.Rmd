@@ -1,0 +1,42 @@
+---
+title: "Interactive Notebooks"
+output: html_document
+runtime: shiny
+---
+# Time to get Fancy! HTML Widgets
+The following code was snatched from [here](https://rmarkdown.rstudio.com/articles_interactive.html).
+
+
+## Fun with Widgets
+### 1. Here are two Shiny widgets
+
+```{r echo = FALSE}
+selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20)
+  
+sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+```
+
+### ...that build a histogram. 
+
+```{r echo = FALSE}
+renderPlot({
+  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
+       xlab = "Duration (minutes)", main = "Geyser eruption duration")
+
+  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+  lines(dens, col = "blue")
+})
+```
+
+### 2. A MAP!
+#### Finally
+```{r message = FALSE, warning = FALSE}
+library(leaflet)
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=-90.1848, lat=38.6247, popup="St. Louis Gateway Arch")
+m  # Print the map
+
+```
